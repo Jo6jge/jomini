@@ -957,10 +957,7 @@ function renderGantt() {
       h += `<div style="display:flex;align-items:center;margin-bottom:2px;">`;
       h += `<div style="min-width:${nameColW}px;max-width:${nameColW}px;font-size:10px;color:#8BABD4;display:flex;align-items:center;gap:3px;padding-right:4px;">`;
       h += `<span style="flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;" title="${t.risk}">${t.name}</span>`;
-      h += `<button class="gantt-comment-btn ${hasCom?'has-c':''}" onclick="openPopover(event,'${t.id}','${t.name.replace(/'/g,'\\'').replace(/"/g,'&quot;')}',this)" title="${hasCom?coms.length+' commentaire(s)':'Ajouter un commentaire'}">
-        <i class="fa-solid fa-comment"></i>
-        ${hasCom?`<span class="cmt-badge">${coms.length}</span>`:''}
-      </button>`;
+      h += '<button class="gantt-comment-btn '+( hasCom?'has-c':'')+'" data-tid="'+t.id+'" onclick="openPopoverById(event,this)" title="Commenter"><i class="fa-solid fa-comment"></i>'+(hasCom?'<span class="cmt-badge">'+coms[t.id].length+'</span>':'')+'</button>';
       h += `</div>`;
       h += `<div style="min-width:${IW}px;max-width:${IW}px;font-size:9px;color:#4A6A9A;text-align:center;font-family:'Syne',sans-serif;">${t.id}</div>`;
       for (let w = 1; w <= TOTAL; w++) {
@@ -1030,7 +1027,7 @@ function loadAllComments() {
   try { return JSON.parse(localStorage.getItem('jomini_comments') || '{}'); } catch(e) { return {}; }
 }
 
-function openPopover(e, taskId, taskName, btn) {
+function openPopoverById(e,btn){var tid=btn.dataset.tid;var tasks=TASKS;var t=tasks.find(function(x){return x.id===tid;});if(t)openPopover(e,tid,t.name,btn);}function openPopover(e, taskId, taskName, btn) {
   e.stopPropagation();
   curTaskId = taskId;
   const pop = document.getElementById('cpop');
