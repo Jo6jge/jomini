@@ -919,12 +919,13 @@ function filterOpp(tag, btn) {
 // ════════════════════════════════════════════════
 const SECTIONS = ['PHASE 2 - SOURCING FONCIER','PHASE 3 - JURIDIQUE','PHASE 4 - REGLEMENTAIRE','PHASE 5A - RENOVATION','PHASE 5B - CONSTRUCTION','PHASE 6 - GO-LIVE'];
 const COLORS = {'PHASE 2 - SOURCING FONCIER':'#8B5E3C','PHASE 3 - JURIDIQUE':'#7A5C10','PHASE 4 - REGLEMENTAIRE':'#5C6B2E','PHASE 5A - RENOVATION':'#A04010','PHASE 5B - CONSTRUCTION':'#3D6B28','PHASE 6 - GO-LIVE':'#2A5C30'};
-const TOTAL = 32, IW = 62, CW = 22;
+const IW = 62, CW = 18;
 let nameColW = 200;
 let _isDragging = false, _dragStartX = 0, _dragStartW = 0;
 
 function switchGanttModel(m){TASKS=m==="reno"?TASKS_RENO.slice():TASKS_CONST.slice();var br=document.getElementById("btn-reno");var bc=document.getElementById("btn-const");var gd=document.getElementById("gantt-dur");if(br&&bc){if(m==="reno"){br.style.background="#3D2314";br.style.color="#fff";bc.style.background="transparent";bc.style.color="#9E7B6B";}else{bc.style.background="#3D2314";bc.style.color="#fff";br.style.background="transparent";br.style.color="#9E7B6B";}}if(gd)gd.textContent=m==="reno"?"Renovation - 11 mois":"Construction - 19 mois";renderGantt();}
 function renderGantt() {
+  const TOTAL = (_gM === 'const') ? 80 : 44;
   const el = document.getElementById('gantt');
   if (!el) return;
   const comments = loadAllComments();
