@@ -453,7 +453,7 @@ graph TD
         <span style="color:var(--ao);font-size:10px;"><i class="fa-solid fa-comment" style="font-size:9px;margin-right:2px;"></i>Commenter</span>
       </div>
     </div>
-    <div class="cb" style="padding:10px;overflow-x:auto;"><div style="margin-bottom:8px;display:flex;gap:6px;align-items:center;"><div style="display:flex;background:rgba(255,255,255,.08);border-radius:20px;padding:2px;gap:2px;"><button id="btn-reno" onclick="switchGanttModel('reno')" style="padding:3px 12px;border-radius:16px;border:none;font-size:11px;font-weight:600;cursor:pointer;background:#2E6CC7;color:#fff;">Renovation</button><button id="btn-const" onclick="switchGanttModel('const')" style="padding:3px 12px;border-radius:16px;border:none;font-size:11px;font-weight:600;cursor:pointer;background:transparent;color:#8BABD4;">Construction</button></div><span id="gantt-dur" style="font-size:11px;color:#8BABD4;background:rgba(46,108,199,.15);border-radius:10px;padding:2px 10px;">11 mois S40</span></div><div id="gantt"></div></div>
+    <div class="cb" style="padding:10px;overflow-x:auto;"><div id="gantt"></div></div>
   </div>
 
   <!-- FLUX -->
@@ -926,11 +926,6 @@ const TOTAL = 32, IW = 62, CW = 22;
 let nameColW = 200;
 let _isDragging = false, _dragStartX = 0, _dragStartW = 0;
 
-
-var TASKS_RENO=TASKS.slice();
-var TASKS_CONST=TASKS.concat([{"id":"IM-18","name":"Instruction PC mairie","start":8,"end":16,"mile":0,"risk":"PC refuse","section":"IMMOBILIER JOMINI","color":"#5C7A3E"},{"id":"IM-19","name":"Delai legal recours tiers","start":16,"end":28,"mile":0,"risk":"INCOMPRESSIBLE 3 mois","section":"IMMOBILIER JOMINI","color":"#5C7A3E"},{"id":"IM-20","name":"Fondations + gros oeuvre","start":28,"end":40,"mile":0,"risk":"Retard cascade","section":"IMMOBILIER JOMINI","color":"#5C7A3E"},{"id":"IM-21","name":"Mise hors eau","start":40,"end":52,"mile":0,"risk":"Retard structure","section":"IMMOBILIER JOMINI","color":"#5C7A3E"},{"id":"IM-22","name":"Second oeuvre + agencement","start":52,"end":68,"mile":0,"risk":"Retard finitions","section":"IMMOBILIER JOMINI","color":"#5C7A3E"},{"id":"IM-23","name":"Livraison + levee reserves","start":68,"end":72,"mile":72,"risk":"Non conforme","section":"IMMOBILIER JOMINI","color":"#5C7A3E"}]);
-var _gM="reno";
-function switchGanttModel(m){_gM=m;TASKS=m==="reno"?TASKS_RENO:TASKS_CONST;var br=document.getElementById("btn-reno");var bc=document.getElementById("btn-const");var gd=document.getElementById("gantt-dur");if(br&&bc){if(m==="reno"){br.style.background="#3D2314";br.style.color="#fff";bc.style.background="transparent";bc.style.color="#9E7B6B";}else{bc.style.background="#3D2314";bc.style.color="#fff";br.style.background="transparent";br.style.color="#9E7B6B";}}if(gd)gd.textContent=m==="reno"?"11 mois S40":"19 mois S76";renderGantt();}
 function renderGantt() {
   const el = document.getElementById('gantt');
   if (!el) return;
