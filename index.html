@@ -924,7 +924,7 @@ let nameColW = 200;
 let _isDragging = false, _dragStartX = 0, _dragStartW = 0;
 
 var _gM="reno";function switchGanttModel(m){_gM=m;TASKS=m==="reno"?TASKS_RENO.slice():TASKS_CONST.slice();var br=document.getElementById("btn-reno");var bc=document.getElementById("btn-const");var gd=document.getElementById("gantt-dur");if(br&&bc){if(m==="reno"){br.style.background="#3D2314";br.style.color="#fff";bc.style.background="transparent";bc.style.color="#9E7B6B";}else{bc.style.background="#3D2314";bc.style.color="#fff";br.style.background="transparent";br.style.color="#9E7B6B";}}if(gd)gd.textContent=m==="reno"?"Renovation - 11 mois":"Construction - 19 mois";renderGantt();}
-function renderGantt_SKIP() {
+function renderGantt() {
   var _cur=(typeof _gM!=='undefined')?_gM:'reno';
   var TOTAL=(_cur==='const')?84:44;
    {
