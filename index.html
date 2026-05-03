@@ -12,7 +12,7 @@
   --jb:#0B2D5E;--jbm:#1A4A8A;--jbl:#2E6CC7;
   --se:#0D7A5F;--sem:#14A880;--sel:#1DD4A0;
   --ao:#E8600A;--ar:#C0392B;--aa:#F39C12;
-  --bg:#F5F0E8;--card:#FFFDF9;
+  --bg:#060E1A;--card:#0D1B2E;
   --tp:#E8F0FC;--ts:#8BABD4;--tm:#4A6A9A;
   --br:rgba(46,108,199,0.2);--gold:#D4A017;--ms:#FF6B35;
 }
@@ -66,7 +66,7 @@ html,body{height:100%;background:var(--bg);color:var(--tp);font-family:'DM Sans'
 /* MODAL */
 .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:2000;backdrop-filter:blur(5px);align-items:center;justify-content:center;}
 .modal-overlay.open{display:flex;}
-.modal{background:#FFFDF9;border:1px solid rgba(46,108,199,.4);border-radius:14px;width:min(920px,96vw);max-height:90vh;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 24px 80px rgba(0,0,0,.8);}
+.modal{background:#0D1B2E;border:1px solid rgba(46,108,199,.4);border-radius:14px;width:min(920px,96vw);max-height:90vh;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 24px 80px rgba(0,0,0,.8);}
 .modal-hdr{display:flex;align-items:center;justify-content:space-between;padding:15px 20px;border-bottom:1px solid var(--br);background:rgba(26,74,138,.2);flex-shrink:0;}
 .modal-title{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:var(--tp);display:flex;align-items:center;gap:10px;}
 .modal-close{width:28px;height:28px;border-radius:50%;border:1px solid var(--br);background:transparent;color:var(--tm);font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;}
@@ -247,7 +247,7 @@ html,body{height:100%;background:var(--bg);color:var(--tp);font-family:'DM Sans'
 .gantt-comment-btn{position:relative;width:16px;height:16px;border-radius:50%;border:1px solid rgba(243,156,18,.4);background:rgba(243,156,18,.08);color:var(--aa);font-size:8px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s;}
 .gantt-comment-btn:hover,.gantt-comment-btn.has-c{background:rgba(243,156,18,.3);border-color:var(--aa);}
 .cmt-badge{position:absolute;top:-4px;right:-4px;background:var(--aa);color:#fff;font-size:7px;border-radius:50%;width:12px;height:12px;display:flex;align-items:center;justify-content:center;font-weight:700;}
-.comment-popover{display:none;position:fixed;background:#FFFDF9;border:1px solid rgba(46,108,199,.45);border-radius:10px;padding:14px;width:340px;z-index:3000;box-shadow:0 12px 48px rgba(0,0,0,.7);}
+.comment-popover{display:none;position:fixed;background:#0D1B2E;border:1px solid rgba(46,108,199,.45);border-radius:10px;padding:14px;width:340px;z-index:3000;box-shadow:0 12px 48px rgba(0,0,0,.7);}
 .comment-popover.open{display:block;}
 .cpl{max-height:160px;overflow-y:auto;margin-bottom:10px;}
 .comment-item{padding:8px 10px;border-radius:6px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);margin-bottom:6px;}
@@ -295,9 +295,9 @@ html,body{height:100%;background:var(--bg);color:var(--tp);font-family:'DM Sans'
 ::-webkit-scrollbar-thumb{background:var(--tm);border-radius:3px;}
 
 /* PIN SCREEN */
-#pin-overlay{position:fixed;inset:0;background:#F5F0E8;display:flex;align-items:center;justify-content:center;z-index:9999;}
-#pin-box{background:#FFFDF9;border:1px solid rgba(46,108,199,.4);border-radius:16px;padding:40px 44px;text-align:center;width:340px;box-shadow:0 24px 80px rgba(0,0,0,.8);}
-#pin-input{width:100%;text-align:center;letter-spacing:10px;font-family:'Syne',sans-serif;font-size:28px;font-weight:700;background:rgba(255,255,255,.06);border:1px solid rgba(46,108,199,.4);border-radius:10px;color:#2C1810;padding:14px;outline:none;margin-bottom:10px;box-sizing:border-box;}
+#pin-overlay{position:fixed;inset:0;background:#060E1A;display:flex;align-items:center;justify-content:center;z-index:9999;}
+#pin-box{background:#0D1B2E;border:1px solid rgba(46,108,199,.4);border-radius:16px;padding:40px 44px;text-align:center;width:340px;box-shadow:0 24px 80px rgba(0,0,0,.8);}
+#pin-input{width:100%;text-align:center;letter-spacing:10px;font-family:'Syne',sans-serif;font-size:28px;font-weight:700;background:rgba(255,255,255,.06);border:1px solid rgba(46,108,199,.4);border-radius:10px;color:#E8F0FC;padding:14px;outline:none;margin-bottom:10px;box-sizing:border-box;}
 #pin-error{color:#FF6B6B;font-size:12px;margin-bottom:10px;display:none;min-height:18px;}
 #pin-btn{width:100%;padding:13px;background:linear-gradient(135deg,#2E6CC7,#1A4A8A);border:none;border-radius:10px;color:#fff;font-family:'Syne',sans-serif;font-size:14px;font-weight:700;cursor:pointer;letter-spacing:1px;}
 #pin-btn:hover{opacity:.88;}
@@ -311,7 +311,7 @@ html,body{height:100%;background:var(--bg);color:var(--tp);font-family:'DM Sans'
 <div id="pin-overlay">
   <div id="pin-box">
     <div style="font-size:36px;margin-bottom:14px;">🔐</div>
-    <div style="font-family:'Syne',sans-serif;font-size:18px;font-weight:800;color:#2C1810;margin-bottom:3px;">Jomini × Santé X</div>
+    <div style="font-family:'Syne',sans-serif;font-size:18px;font-weight:800;color:#E8F0FC;margin-bottom:3px;">Jomini × Santé X</div>
     <div style="font-size:11px;color:#4A6A9A;letter-spacing:2px;text-transform:uppercase;margin-bottom:24px;">Master Process v3.0</div>
     <div style="font-size:12px;color:#8BABD4;margin-bottom:10px;">Entrez votre code d'accès (4 chiffres)</div>
     <input id="pin-input" type="tel" maxlength="4" placeholder="••••" autocomplete="off">
@@ -324,7 +324,7 @@ html,body{height:100%;background:var(--bg);color:var(--tp);font-family:'DM Sans'
 <div id="user-bar">
   <div id="user-badge">
     <i class="fa-solid fa-user-circle" style="color:#2E6CC7;"></i>
-    <span id="user-name" style="color:#2C1810;font-weight:600;font-family:'Syne',sans-serif;"></span>
+    <span id="user-name" style="color:#E8F0FC;font-weight:600;font-family:'Syne',sans-serif;"></span>
     <span id="sync-dot"></span>
     <span id="sync-label" style="font-size:10px;">Firebase...</span>
   </div>
@@ -387,8 +387,8 @@ graph TD
     SX-->G3["🏥 Grossiste #3"]:::ss
     G1-->PR1["👨‍⚕️ Mandataire PR<br/>Prestataire externe"]:::pr
     classDef fo fill:#1A4A8A,stroke:#2E6CC7,color:#fff,font-weight:bold
-    classDef j fill:#0D2E5A,stroke:#2E6CC7,color:#2C1810
-    classDef s fill:#0D3D30,stroke:#14A880,color:#2C1810
+    classDef j fill:#0D2E5A,stroke:#2E6CC7,color:#E8F0FC
+    classDef s fill:#0D3D30,stroke:#14A880,color:#E8F0FC
     classDef js fill:#0A1F3F,stroke:#1A4A8A,color:#8BABD4,font-size:11px
     classDef ss fill:#0A2820,stroke:#0D7A5F,color:#7DCFB8,font-size:11px
     classDef pr fill:#2A1A00,stroke:#E8600A,color:#FFB47A,font-size:10px,stroke-dasharray:5 5
@@ -484,7 +484,7 @@ flowchart LR
     classDef en fill:#0D7A5F,stroke:#14A880,color:#fff,font-weight:bold
     classDef pv fill:#0D3060,stroke:#2E6CC7,color:#8BABD4
     classDef fj fill:#0D2445,stroke:#1A4A8A,color:#7EB8F5
-    classDef fjc fill:#1A2E60,stroke:#2E6CC7,color:#2C1810,font-weight:bold
+    classDef fjc fill:#1A2E60,stroke:#2E6CC7,color:#E8F0FC,font-weight:bold
     classDef im fill:#0A2030,stroke:#1677B8,color:#5CA3D4
     classDef rx fill:#0A2820,stroke:#0D7A5F,color:#7DCFB8
     classDef op fill:#2A1500,stroke:#C06515,color:#FFB47A
@@ -1105,7 +1105,7 @@ mermaid.initialize({
   startOnLoad: true, theme: 'dark',
   themeVariables: {
     primaryColor:'#0D2E5A', primaryTextColor:'#E8F0FC', primaryBorderColor:'#2E6CC7',
-    lineColor:'#2E6CC7', background:'#F5F0E8', mainBkg:'#FFFDF9',
+    lineColor:'#2E6CC7', background:'#060E1A', mainBkg:'#0D1B2E',
     fontFamily:"'DM Sans',sans-serif", fontSize:'12px'
   },
   flowchart: {htmlLabels: true, curve:'basis', useMaxWidth: false}
@@ -1131,25 +1131,25 @@ document.addEventListener('DOMContentLoaded', () => {
       <form id="add-opp-form" onsubmit="return false;">
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;">
           <div><label style="font-size:10px;color:#4A6A9A;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:4px;">Zone / Nom *</label>
-          <input name="title" required style="width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(46,108,199,.25);border-radius:6px;color:#2C1810;padding:8px 10px;font-family:'DM Sans',sans-serif;font-size:12px;outline:none;box-sizing:border-box;" placeholder="ex: Haute-Saône / Vesoul"></div>
+          <input name="title" required style="width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(46,108,199,.25);border-radius:6px;color:#E8F0FC;padding:8px 10px;font-family:'DM Sans',sans-serif;font-size:12px;outline:none;box-sizing:border-box;" placeholder="ex: Haute-Saône / Vesoul"></div>
           <div><label style="font-size:10px;color:#4A6A9A;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:4px;">Localisation</label>
-          <input name="location" style="width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(46,108,199,.25);border-radius:6px;color:#2C1810;padding:8px 10px;font-family:'DM Sans',sans-serif;font-size:12px;outline:none;box-sizing:border-box;" placeholder="ex: Grand Est · Dép. 70"></div>
+          <input name="location" style="width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(46,108,199,.25);border-radius:6px;color:#E8F0FC;padding:8px 10px;font-family:'DM Sans',sans-serif;font-size:12px;outline:none;box-sizing:border-box;" placeholder="ex: Grand Est · Dép. 70"></div>
         </div>
         <div style="margin-bottom:10px;"><label style="font-size:10px;color:#4A6A9A;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:4px;">Description</label>
-        <textarea name="description" rows="3" style="width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(46,108,199,.25);border-radius:6px;color:#2C1810;padding:8px 10px;font-family:'DM Sans',sans-serif;font-size:12px;outline:none;resize:none;box-sizing:border-box;" placeholder="Contexte, tension, foncier disponible..."></textarea></div>
+        <textarea name="description" rows="3" style="width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(46,108,199,.25);border-radius:6px;color:#E8F0FC;padding:8px 10px;font-family:'DM Sans',sans-serif;font-size:12px;outline:none;resize:none;box-sizing:border-box;" placeholder="Contexte, tension, foncier disponible..."></textarea></div>
         <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;margin-bottom:10px;">
           <div><label style="font-size:10px;color:#4A6A9A;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:4px;">Score /100</label>
-          <input name="score" type="number" min="0" max="100" style="width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(46,108,199,.25);border-radius:6px;color:#2C1810;padding:8px;font-family:'DM Sans',sans-serif;font-size:12px;outline:none;box-sizing:border-box;" placeholder="75"></div>
+          <input name="score" type="number" min="0" max="100" style="width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(46,108,199,.25);border-radius:6px;color:#E8F0FC;padding:8px;font-family:'DM Sans',sans-serif;font-size:12px;outline:none;box-sizing:border-box;" placeholder="75"></div>
           <div><label style="font-size:10px;color:#4A6A9A;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:4px;">Tension</label>
-          <select name="tension" style="width:100%;background:#FFFDF9;border:1px solid rgba(46,108,199,.25);border-radius:6px;color:#2C1810;padding:8px;font-family:'DM Sans',sans-serif;font-size:12px;outline:none;box-sizing:border-box;">
+          <select name="tension" style="width:100%;background:#0D1B2E;border:1px solid rgba(46,108,199,.25);border-radius:6px;color:#E8F0FC;padding:8px;font-family:'DM Sans',sans-serif;font-size:12px;outline:none;box-sizing:border-box;">
             <option>Critique</option><option>Haute</option><option selected>Moyenne</option><option>Faible</option></select></div>
           <div><label style="font-size:10px;color:#4A6A9A;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:4px;">Officines</label>
-          <input name="officines" style="width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(46,108,199,.25);border-radius:6px;color:#2C1810;padding:8px;font-family:'DM Sans',sans-serif;font-size:12px;outline:none;box-sizing:border-box;" placeholder="120"></div>
+          <input name="officines" style="width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(46,108,199,.25);border-radius:6px;color:#E8F0FC;padding:8px;font-family:'DM Sans',sans-serif;font-size:12px;outline:none;box-sizing:border-box;" placeholder="120"></div>
           <div><label style="font-size:10px;color:#4A6A9A;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:4px;">CA estimé</label>
-          <input name="ca" style="width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(46,108,199,.25);border-radius:6px;color:#2C1810;padding:8px;font-family:'DM Sans',sans-serif;font-size:12px;outline:none;box-sizing:border-box;" placeholder="8M€"></div>
+          <input name="ca" style="width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(46,108,199,.25);border-radius:6px;color:#E8F0FC;padding:8px;font-family:'DM Sans',sans-serif;font-size:12px;outline:none;box-sizing:border-box;" placeholder="8M€"></div>
         </div>
         <div style="margin-bottom:14px;"><label style="font-size:10px;color:#4A6A9A;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:4px;">Tags (séparés par virgule)</label>
-        <input name="tags" style="width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(46,108,199,.25);border-radius:6px;color:#2C1810;padding:8px 10px;font-family:'DM Sans',sans-serif;font-size:12px;outline:none;box-sizing:border-box;" placeholder="ex: haute, rural, froid"></div>
+        <input name="tags" style="width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(46,108,199,.25);border-radius:6px;color:#E8F0FC;padding:8px 10px;font-family:'DM Sans',sans-serif;font-size:12px;outline:none;box-sizing:border-box;" placeholder="ex: haute, rural, froid"></div>
         <div style="display:flex;justify-content:flex-end;gap:8px;">
           <button type="button" onclick="closeAddOppModal()" style="padding:8px 16px;background:transparent;border:1px solid rgba(46,108,199,.3);border-radius:7px;color:#4A6A9A;font-family:'DM Sans',sans-serif;font-size:12px;cursor:pointer;">Annuler</button>
           <button type="button" id="add-opp-btn" onclick="submitAddOpp()" style="padding:8px 16px;background:#2E6CC7;border:none;border-radius:7px;color:#fff;font-family:'DM Sans',sans-serif;font-size:12px;cursor:pointer;font-weight:600;">Ajouter</button>
